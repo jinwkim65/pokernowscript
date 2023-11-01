@@ -35,8 +35,12 @@ losers = sorted(losers, key=lambda x: x[1])
 # Function to make Pokernow numbers look pretty
 def decimalfy(n):
     str_n = str(n)
-    if len(str_n) < 3:
-        return str_n
+    if n == 0:
+        return "0"
+    elif len(str_n) == 1:
+        return "0.0" + str_n
+    elif len(str_n) == 2:
+        return "0." + str_n
     else:
         return (str_n[:-2] + "." + str_n[-2:])
 
